@@ -1,0 +1,212 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  /* This defines what 1 rem is */
+  font-size: 62.5%;
+  /*1rem = 10px; 10px/16px = 62.5% */ }
+
+body {
+  overflow: hidden;
+  height: 100vh;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+
+header {
+  background-color: #00577d;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  color: #fff;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  font-size: 2rem;
+  text-align: center;
+  padding: 2rem;
+  height: 20%; }
+
+main {
+  height: 70%;
+  position: relative;
+  background-color: #8cdcff; }
+
+@media screen and (min-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 10%;
+    padding: 2rem 3rem;
+    font-size: 2.8rem; }
+  main {
+    height: 85%; } }
+
+@media screen and (min-width: 1024px) {
+  header {
+    height: 20%; }
+  main {
+    height: 75%; } }
+
+.logo {
+  position: relative; }
+
+.logo svg {
+  height: 45px;
+  fill: #fe52fe;
+  filter: drop-shadow(1px 1px 1px #000); }
+
+@media screen and (min-width: 768px) {
+  .logo svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); } }
+
+@media screen and (min-width: 1024px) {
+  .logo svg {
+    height: 100px; } }
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+nav ul {
+  list-style-type: none;
+  text-align: center; }
+
+nav li {
+  display: inline;
+  padding: 1rem 1.5rem; }
+  nav li:hover {
+    box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5); }
+  nav li:active {
+    box-shadow: none; }
+
+a {
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer; }
+  a:hover, a:active {
+    color: lightgrey; }
+
+.column1,
+.column2 {
+  height: 100%;
+  position: relative;
+  left: -200%; }
+
+@media screen and (min-width: 768px) {
+  .column1,
+  .column2 {
+    width: 50%;
+    padding: 1rem; }
+  .column2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; } }
+
+article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: transparent;
+  padding: 5.5rem 2rem;
+  position: absolute;
+  height: 100%;
+  width: 100vw; }
+  article .title {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 1;
+    font-size: 2rem; }
+  article .image {
+    width: 100%;
+    height: 60%;
+    margin: 0 auto;
+    border: 2px solid black;
+    background-size: cover;
+    background-position: center; }
+  article .text {
+    height: 40%;
+    display: flex;
+    align-items: flex-start;
+    order: 2;
+    font-size: 1.5rem;
+    line-height: 1.5; }
+
+#article1 .image {
+  background-image: url(../img/image1.jpg); }
+
+#article2 .image {
+  background-image: url(../img/image2.jpg); }
+
+@media screen and (min-width: 768px) {
+  article {
+    flex-direction: row; } }
+
+@media screen and (min-width: 1024px) {
+  article .title {
+    width: 100vw;
+    font-size: 3rem; }
+  article .text {
+    font-size: 2rem; } }
+
+article .text span {
+  font-weight: bold; }
+
+article .text a {
+  color: #000; }
+
+.slideIn {
+  animation-name: slideIn;
+  animation-duration: 2s;
+  animation-delay: .2s;
+  animation-fill-mode: both; }
+
+.slideOut {
+  animation-name: slideOut;
+  animation-duration: 2s;
+  animation-delay: .2s;
+  animation-fill-mode: both; }
+
+footer {
+  background-color: #00577d;
+  height: 10%;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  position: relative; }
+
+.copyright {
+  font-size: 1.2rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); }
+
+@media screen and (min-width: 768px) {
+  .copyright {
+    font-size: 1.5rem; } }
+
+/* Animations */
+@keyframes slideIn {
+  0% {
+    left: -200%;
+    opacity: 0; }
+  100% {
+    left: 0px;
+    opacity: 1; } }
+
+@keyframes slideOut {
+  0% {
+    left: 0px;
+    opacity: 1; }
+  100% {
+    left: 200%;
+    opacity: 0; } }
